@@ -1,0 +1,106 @@
+/* Стили форм */
+.cv-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.6rem;
+}
+.cv-field__label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+.cv-field--inline {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.cv-field--inline input {
+  flex: 1;
+}
+
+.cv-field__dates {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cv-form__display p {
+  margin: 0.35rem 0;
+  color: var(--text);
+}
+
+/* Интеррактивные состояния кнопок */
+.btn {
+  transition: background-color 0.16s ease, color 0.16s ease,
+    box-shadow 0.12s ease;
+}
+
+/* Primary (сохранить) — цветовой акцент на hover, лёгкая тень на focus/active */
+.btn--primary:hover {
+  background-color: var(--accent-hover);
+}
+.btn--primary:active {
+  box-shadow: inset 0 2px 6px rgba(16, 24, 40, 0.5);
+}
+.btn--primary:focus-visible {
+  outline: 3px solid rgba(91, 124, 250, 0.18);
+  outline-offset: 2px;
+}
+
+/* Edit button — нейтральный ghost стиль, подчёркивающий возможность редактирования */
+.cv-form__display .btn[data-action='edit'] {
+  background: transparent;
+  color: var(--accent);
+  border: 1px dashed rgba(91, 124, 250, 0.18);
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+}
+
+.cv-form__display .btn[data-action='edit']:hover {
+  background: var(--btn-ghost-hover);
+}
+
+.cv-form__display .btn[data-action='edit']:active {
+  box-shadow: inset 0 1px 3px rgba(16, 24, 40, 0.06);
+}
+
+.cv-form__display .btn[data-action='edit']:focus-visible {
+  outline: 3px solid rgba(91, 124, 250, 0.14);
+  outline-offset: 2px;
+}
+
+/* Disabled state — визуальное затухание */
+.btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Accent button (Отправить CV) интерактивность */
+.btn--accent:hover {
+  background-color: var(--accent-2-hover);
+}
+.btn--accent:active {
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Инпуты */
+input,
+textarea {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #85909b;
+  background: white;
+  color: var(--text);
+}
+
+textarea {
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 0.5;
+}

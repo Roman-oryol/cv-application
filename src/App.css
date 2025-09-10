@@ -1,0 +1,63 @@
+/* Основная раскладка и адаптив */
+.cv-app {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+}
+.cv-app__header {
+  padding: 1rem 1.25rem;
+  border-bottom: 2px solid rgba(15, 23, 36, 0.04);
+  /* background: transparent; */
+}
+.cv-app__main {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  flex: 1;
+}
+
+.cv-form {
+  width: 420px;
+  max-width: 45%;
+}
+.cv-preview {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+}
+.cv-preview__card {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+}
+
+.cv-form__section {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+}
+.cv-form__actions {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cv-app__main {
+    flex-direction: column;
+  }
+  .cv-form {
+    max-width: 100%;
+    width: 100%;
+  }
+  .cv-preview {
+    width: 100%;
+  }
+}

@@ -1,0 +1,19 @@
+@import './styles/variables.css';
+/* @import './styles/layout.css'; */
+/* @import './form.css';
+@import './preview.css'; */
+
+/* Небольшие правки и адаптация */
+body {
+  font-family: var(--font-sans);
+  font-size: var(--base-font-size);
+  margin: 0;
+  padding: 0;
+}
+
+/* helper */
+.cv-form__final {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}

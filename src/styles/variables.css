@@ -1,0 +1,85 @@
+/* Цвета и переменные шрифтов */
+:root {
+  --bg: #f5f7fb;
+  --card-bg: #ffffff;
+  --accent: #5b7cfa;
+  --accent-2: #6ee7b7;
+  --accent-hover: #4762e6; /* slightly darker accent */
+  --accent-2-hover: #45cfa0; /* slightly darker accent-2 */
+  --btn-ghost-hover: rgba(91, 124, 250, 0.08);
+  --text: #0f1724;
+  --muted: #6b7280;
+  --danger: #ef4444;
+  --radius: 12px;
+  --shadow: 0 6px 20px rgba(16, 24, 40, 0.06);
+
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial;
+  --font-heading-weight: 700;
+  --font-body-weight: 400;
+  --base-font-size: 16px;
+}
+
+/* Типографические вспомогательные классы */
+.typo--h1 {
+  font-family: var(--font-sans);
+  font-size: 1.4rem;
+  font-weight: var(--font-heading-weight);
+  color: var(--text);
+}
+.typo--h2 {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 0.5rem 0;
+}
+.typo--h3 {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0.25rem 0;
+}
+.typo--muted {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Утилиты */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Кнопки */
+.btn {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: white;
+  border-color: transparent;
+}
+
+.btn--accent {
+  background: var(--accent-2);
+  color: var(--text);
+  border-color: transparent;
+}
+
+.btn:focus {
+  outline: 3px solid rgba(91, 124, 250, 0.18);
+}
