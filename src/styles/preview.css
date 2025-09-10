@@ -1,0 +1,20 @@
+/* Стили превью резюме */
+.cv-preview__section {
+  padding: 0.5rem 0;
+  border-top: 1px dashed rgba(15, 23, 36, 0.06);
+}
+.cv-preview__section:first-of-type {
+  border-top: none;
+}
+.cv-preview__section p {
+  margin: 0.35rem 0;
+  color: var(--text);
+}
+
+/* Небольшая карточка при пустых полях */
+.cv-preview__empty {
+  color: var(--muted);
+  padding: 0.5rem;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(91, 124, 250, 0.04), transparent);
+}

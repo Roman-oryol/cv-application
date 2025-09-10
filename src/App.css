@@ -26,6 +26,7 @@
   flex: 1;
   display: flex;
   align-items: flex-start;
+  max-width: 800px;
 }
 .cv-preview__card {
   background: var(--card-bg);
