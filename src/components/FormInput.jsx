@@ -1,14 +1,29 @@
 import InputField from './InputField';
+import TextareaField from './TextareaField';
 
-function FormInput({ onClick, fields }) {
+function FormInput({ fields, onChange, data }) {
   return (
-    <div class="cv-form__inputs">
+    <div className="cv-form__inputs">
       {fields.map((field, index) => {
-        return <InputField field={field} key={index} />;
+        return field.type !== 'textarea' ? (
+          <InputField
+            field={field}
+            key={index}
+            value={data[field.name]}
+            onChange={onChange}
+          />
+        ) : (
+          <TextareaField
+            field={field}
+            key={index}
+            value={data[field.name]}
+            onChange={onChange}
+          />
+        );
       })}
 
-      <div class="cv-form__actions">
-        <button class="btn btn--primary" type="submit" onClick={onClick}>
+      <div className="cv-form__actions">
+        <button className="btn btn--primary" type="submit">
           Сохранить
         </button>
       </div>

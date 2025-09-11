@@ -1,17 +1,23 @@
-function FormDisplay({ onClick, fields }) {
+function FormDisplay({ onClick, fields, data }) {
   return (
-    <div class="cv-form__display">
-      {fields.map((field) => {
+    <div className="cv-form__display">
+      {fields.map((field, index) => {
         return (
-          <p class="cv-display__line">
-            <strong>{field.label}:</strong>{' '}
+          <p key={index}>
+            <strong>{field.label}: </strong>
+            {data[field.name]}
             <span data-display={field.name}></span>
           </p>
         );
       })}
 
-      <div class="cv-form__actions">
-        <button class="btn" type="button" data-action="edit" onClick={onClick}>
+      <div className="cv-form__actions">
+        <button
+          className="btn"
+          type="button"
+          data-action="edit"
+          onClick={onClick}
+        >
           Редактировать
         </button>
       </div>

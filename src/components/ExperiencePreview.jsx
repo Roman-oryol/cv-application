@@ -1,7 +1,7 @@
 function ExperiencePreview() {
   return (
-    <div class="cv-preview__section" data-preview="experience">
-      <h3 class="typo--h3">Опыт работы</h3>
+    <div className="cv-preview__section" data-preview="experience">
+      <h3 className="typo--h3">Опыт работы</h3>
       <p>
         <strong>Компания:</strong> <span data-preview="company"></span>
       </p>

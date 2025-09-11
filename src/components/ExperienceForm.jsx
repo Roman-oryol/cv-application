@@ -1,40 +1,89 @@
+import { useState } from 'react';
 import InputField from './InputField';
+import FormInput from './FormInput';
+import FormDisplay from './FormDisplay';
 
-function ExperienceForm() {
+const experienceFields = [
+  {
+    name: 'company',
+    label: 'Компания',
+    type: 'text',
+    placeholder: 'ООО Рога и Копыта',
+  },
+  {
+    name: 'position',
+    label: 'Должность',
+    type: 'text',
+    placeholder: 'Frontend-разработчик',
+  },
+  {
+    name: 'duties',
+    label: 'Обязанности',
+    type: 'textarea',
+    placeholder: 'Разработка интерфейсов',
+  },
+  {
+    name: 'startDate',
+    label: 'Начало',
+    type: 'date',
+    placeholder: '',
+  },
+  {
+    name: 'endDate',
+    label: 'Конец',
+    type: 'date',
+    placeholder: '',
+  },
+];
+
+function ExperienceForm({ onSubmit }) {
+  const [isEditing, setIsEditing] = useState(true);
+
+  const [formData, setFormData] = useState({
+    company: '',
+    position: '',
+    duties: '',
+    startDate: '',
+    endDate: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    setIsEditing(!isEditing);
+    e.preventDefault();
+    onSubmit('education', formData);
+  };
+
+  const handleClick = () => {
+    setIsEditing(!isEditing);
+  };
+
   return (
-    <form className="cv-form__section" data-section="experience">
+    <form
+      className="cv-form__section"
+      data-section="experience"
+      onSubmit={handleSubmit}
+    >
       <h2 className="typo--h2">Опыт работы</h2>
-      <InputField
-        field={{
-          name: 'company',
-          label: 'Компания',
-          type: 'text',
-          placeholder: 'ООО Рога и Копыта',
-        }}
-      />
-      <InputField
-        field={{
-          name: 'position',
-          label: 'Должность',
-          type: 'text',
-          placeholder: 'Frontend-разработчик',
-        }}
-      />
-      <label className="cv-field">
-        <span className="cv-field__label">Обязанности</span>
-        <textarea
-          name="duties"
-          rows="3"
-          placeholder="Разработка интерфейсов"
-        ></textarea>
-      </label>
-      <label className="cv-field">
-        <span className="cv-field__label">Даты</span>
-        <p className="cv-field__dates">
-          <input name="startDate" type="date" />
-          <input name="endDate" type="date" />
-        </p>
-      </label>
+      {isEditing ? (
+        <FormInput
+          fields={experienceFields}
+          onChange={handleChange}
+          data={formData}
+        />
+      ) : (
+        <FormDisplay
+          onClick={handleClick}
+          fields={experienceFields}
+          data={formData}
+        />
+      )}
     </form>
   );
 }

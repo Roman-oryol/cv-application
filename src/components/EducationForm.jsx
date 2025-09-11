@@ -23,20 +23,50 @@ const educationFields = [
   },
 ];
 
-function EducationForm() {
+function EducationForm({ onSubmit }) {
   const [isEditing, setIsEditing] = useState(true);
+  const initFormData = educationFields.reduce(
+    (data, field) => ({ ...data, [field.name]: '' }),
+    {}
+  );
+  const [formData, setFormData] = useState(initFormData);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    setIsEditing(!isEditing);
+    e.preventDefault();
+    onSubmit('education', formData);
+  };
 
   const handleClick = () => {
     setIsEditing(!isEditing);
   };
 
   return (
-    <form class="cv-form__section" data-section="education">
-      <h2 class="typo--h2">Образование</h2>
+    <form
+      className="cv-form__section"
+      data-section="education"
+      onSubmit={handleSubmit}
+    >
+      <h2 className="typo--h2">Образование</h2>
       {isEditing ? (
-        <FormInput onClick={handleClick} fields={educationFields} />
+        <FormInput
+          fields={educationFields}
+          onChange={handleChange}
+          data={formData}
+        />
       ) : (
-        <FormDisplay onClick={handleClick} fields={educationFields} />
+        <FormDisplay
+          onClick={handleClick}
+          fields={educationFields}
+          data={formData}
+        />
       )}
     </form>
   );
