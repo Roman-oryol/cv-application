@@ -49,11 +49,7 @@ function EducationForm({ onSubmit }) {
   };
 
   return (
-    <form
-      className="cv-form__section"
-      data-section="education"
-      onSubmit={handleSubmit}
-    >
+    <form className="cv-form__section" onSubmit={handleSubmit}>
       <h2 className="typo--h2">Образование</h2>
       {isEditing ? (
         <FormInput

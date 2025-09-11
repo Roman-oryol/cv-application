@@ -19,7 +19,7 @@ function Main() {
   return (
     <main className="cv-app__main">
       <FormSidebar onSubmit={handleFormSubmit} />
-      <Preview />
+      <Preview formsData={formsData} />
     </main>
   );
 }

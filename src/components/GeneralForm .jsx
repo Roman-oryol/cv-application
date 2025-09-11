@@ -45,11 +45,7 @@ function GeneralForm({ onSubmit }) {
   };
 
   return (
-    <form
-      className="cv-form__section"
-      data-section="general"
-      onSubmit={handleSubmit}
-    >
+    <form className="cv-form__section" onSubmit={handleSubmit}>
       <h2 className="typo--h2">Общая информация</h2>
       {isEditing ? (
         <FormInput

@@ -55,9 +55,9 @@ function ExperienceForm({ onSubmit }) {
   };
 
   const handleSubmit = (e) => {
-    setIsEditing(!isEditing);
     e.preventDefault();
-    onSubmit('education', formData);
+    setIsEditing(!isEditing);
+    onSubmit('experience', formData);
   };
 
   const handleClick = () => {
@@ -65,11 +65,7 @@ function ExperienceForm({ onSubmit }) {
   };
 
   return (
-    <form
-      className="cv-form__section"
-      data-section="experience"
-      onSubmit={handleSubmit}
-    >
+    <form className="cv-form__section" onSubmit={handleSubmit}>
       <h2 className="typo--h2">Опыт работы</h2>
       {isEditing ? (
         <FormInput

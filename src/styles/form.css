@@ -47,23 +47,22 @@
 }
 
 /* Edit button — нейтральный ghost стиль, подчёркивающий возможность редактирования */
-.cv-form__display .btn[data-action='edit'] {
-  background: transparent;
+.cv-form__display .btn-edit {
   color: var(--accent);
   border: 1px dashed rgba(91, 124, 250, 0.18);
   padding: 0.45rem 0.6rem;
   border-radius: 8px;
 }
 
-.cv-form__display .btn[data-action='edit']:hover {
+.cv-form__display .btn-edit:hover {
   background: var(--btn-ghost-hover);
 }
 
-.cv-form__display .btn[data-action='edit']:active {
+.cv-form__display .btn-edit:active {
   box-shadow: inset 0 1px 3px rgba(16, 24, 40, 0.06);
 }
 
-.cv-form__display .btn[data-action='edit']:focus-visible {
+.cv-form__display .btn-edit:focus-visible {
   outline: 3px solid rgba(91, 124, 250, 0.14);
   outline-offset: 2px;
 }

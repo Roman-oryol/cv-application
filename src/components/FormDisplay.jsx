@@ -6,18 +6,12 @@ function FormDisplay({ onClick, fields, data }) {
           <p key={index}>
             <strong>{field.label}: </strong>
             {data[field.name]}
-            <span data-display={field.name}></span>
           </p>
         );
       })}
 
       <div className="cv-form__actions">
-        <button
-          className="btn"
-          type="button"
-          data-action="edit"
-          onClick={onClick}
-        >
+        <button className="btn btn-edit" type="button" onClick={onClick}>
           Редактировать
         </button>
       </div>
